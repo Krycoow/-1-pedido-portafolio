@@ -126,39 +126,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Modal functionality
-const modal = document.getElementById('aboutModal');
-const closeBtn = document.querySelector('.close');
-
-// Open modal when clicking on "SOBRE MÍ" (if exists)
-document.addEventListener('click', (e) => {
-    if (e.target.textContent === 'SOBRE MÍ' || e.target.textContent === 'Sobre mí') {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-});
-
-// Close modal
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'block') {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
+// Modal functionality removido: se mantiene referencia por si se añade nuevamente
 
 // Header background change on scroll (removed - no header)
 // window.addEventListener('scroll', () => {
