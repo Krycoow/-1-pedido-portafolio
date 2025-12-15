@@ -16,29 +16,9 @@
 // });
 
 // Contact Form Handling
-const contactForm = document.getElementById('contactForm');
+// Contact Form Handling - Managed by Netlify Forms
+// const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Create mailto link
-    const mailtoLink = `mailto:jeanpaulcasique@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    showNotification('¡Mensaje preparado! Se abrirá tu cliente de correo.', 'success');
-    
-    // Reset form
-    contactForm.reset();
-});
 
 // Notification system
 function showNotification(message, type = 'info') {
